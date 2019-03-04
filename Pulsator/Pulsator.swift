@@ -252,6 +252,7 @@ open class Pulsator: CAReplicatorLayer, CAAnimationDelegate {
     // MARK: - Delegate methods for CAAnimation
     
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        animationGroup = nil
         if let keys = pulse.animationKeys(), keys.count > 0 {
             pulse.removeAllAnimations()
         }
